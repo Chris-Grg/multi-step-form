@@ -29,8 +29,10 @@ const MultiForm = () => {
       >
 
       <FormikStep validationSchema={Yup.object({
-        firstname: Yup.string().required("Required"),
-        lastname: Yup.string().required("Required"),
+        firstname: Yup.string().required("Required").matches(/^[A-Za-z ]*$/, 'Please enter valid name')
+        .max(40),
+        lastname: Yup.string().required("Required").matches(/^[A-Za-z ]*$/, 'Please enter valid name')
+        .max(40),
         email: Yup.string().email("Invalid email address").required("Required"),
        password: Yup.string()
           .matches(/[a-z0-9]{8,}/, "Password must be at least 8 characters")
