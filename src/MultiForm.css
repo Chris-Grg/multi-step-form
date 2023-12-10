@@ -12,6 +12,10 @@ body {
   font-family: Tahoma;
   font-size: x-large;
 }
+.step {
+  text-align: center;
+  font-size: medium;
+}
 .error-message {
   color: red;
   width: 100%;
@@ -89,4 +93,16 @@ button {
   border-color: white;
   color: white;
   flex-grow: 1;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: medium;
+  }
+}
+
+@media screen and (min-width: 3000px) {
+  body {
+    font-size: xx-large;
+  }
 }

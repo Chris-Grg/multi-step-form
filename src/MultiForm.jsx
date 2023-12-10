@@ -3,6 +3,7 @@ import { Field, Form, Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./MultiForm.css";
 
+//delay
 const sleep = (time) => new Promise((acc) => setTimeout(acc, time));
 
 const MultiForm = () => {
@@ -21,7 +22,7 @@ const MultiForm = () => {
         terms: false,
       }}
       onSubmit={async (values) => {
-        await sleep(3000);
+        await sleep(1000);
         alert(JSON.stringify(values, null, 2));
         console.log('values', values);
       }}
@@ -168,6 +169,7 @@ const FormikStepper = ({ children, ...props }) => {
         {({isSubmitting})=>(
 
           <Form autoComplete="off">
+            <div className="step">Step {step+1} of {childrenArray.length}</div>
           {currentChild}
           <div className="btn">
             {step>0?<button 
